@@ -7,13 +7,12 @@ public class IntItem : MonoBehaviour
     public bool bread = false;
     public bool egg = false;
     public bool bacon = false;
-    bool stoveOn = false;
 
-    void update()
+    void Update()
     {
-        if (bread && egg && bacon)
+        if ((bread == true && egg == true) && bacon == true)
         {
-            stoveOn = true;
+            GameObject.FindGameObjectWithTag("Finish").GetComponent<Stove>().stoveOn = true;
         }
     }
 }
